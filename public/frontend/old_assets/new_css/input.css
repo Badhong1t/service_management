@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom fonts */
+@font-face {
+  font-family: 'normalFont';
+  src: local('Helvetical'),
+    url('./assets/fonts/HelveticaNeue-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mediumFont';
+  src: local('Helvetical'),
+    url('./assets/fonts/HelveticaNeue-Medium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'boldFont';
+  src: local('Helvetical'),
+    url('./assets/fonts/HelveticaNeueBold.ttf') format('truetype');
+}
+
+.hero-banner-select {
+  @apply w-36 text-[#2E2E2E] border-t-0 border-r-0 border-b-0 rounded-none font-poppins font-semibold border-l border-gray-200 px-4;
+}
+
+.hero-banner-select .list {
+  @apply font-poppins font-semibold;
+}
+.hero-banner-select-sm {
+  @apply w-full text-[#2E2E2E] border-t-0 border-r-0 border-b-0 font-poppins font-semibold border-l border-gray-200 px-4 rounded-md;
+}
+
+.hero-banner-select-sm .list {
+  @apply font-poppins font-semibold w-full;
+}
+
+.accordion-body-address {
+  @apply !w-full px-5 !h-16 md:!h-20 !leading-[64px] md:!leading-[80px] !rounded-lg md:rounded-xl lg:rounded-2xl !text-base !font-mediumFont !border-black !text-textColor;
+}
+.accordion-body-address .list {
+  @apply w-full;
+}
+.details-page-select {
+  @apply !w-16 sm:!w-20 md:!w-[100px] !text-xs sm:!text-sm pl-2 md:px-5 leading-9 !rounded-lg  sm:!rounded-xl md:!rounded-2xl md:!text-base !font-normalFont !border-[#ECECEC] !text-textColor;
+}
+.details-page-select .list {
+  @apply w-full;
+}
+
+.business-specialty-select {
+  @apply w-full px-4 bg-[#E5E5E5] !mb-5 h-[52px] leading-[52px] text-[#2E2E2E] text-sm;
+}
+.business-specialty-select .nice-select::after {
+  right: 20px;
+}
+.business-specialty-select .list {
+  @apply w-full !text-sm;
+}
+.set-operation-select {
+  @apply border-b border-[#6A6A6A] border-t-0 border-x-0 rounded-none !w-32  px-4 bg-transparent;
+}
+.set-operation-select .list {
+  @apply w-full max-h-[200px] overflow-y-auto;
+}
+.set-operation-select .list::-webkit-scrollbar,
+#opening-days-modal::-webkit-scrollbar {
+  @apply w-2 bg-primary;
+}
+.set-operation-select .list::-webkit-scrollbar-thumb,
+#opening-days-modal::-webkit-scrollbar-thumb {
+  @apply bg-[#F8BF2C] rounded-sm;
+}
+.set-operation-select .list::-webkit-scrollbar-thumb:hover,
+#opening-days-modal::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+.accordion-content .nice-select::after {
+  @apply hidden;
+}
+
+.details-page .owl-carousel .owl-nav {
+  @apply hidden;
+}
+.details-page .owl-carousel .owl-item {
+  @apply rounded-md;
+}
+.toggle-container {
+  @apply flex items-center;
+}
+
+.toggle-switch {
+  @apply hidden;
+}
+
+.toggle-label {
+  @apply block relative w-9 h-6 bg-transparent border-2 border-[#6A6A6A] rounded cursor-pointer transition-colors duration-300 ease-in-out;
+}
+
+.toggle-label .toggle-button {
+  @apply absolute content-[''] size-3 top-1/2 left-1 -translate-y-1/2 bg-[#6A6A6A] rounded transition-transform duration-300 ease-in-out;
+}
+
+.toggle-switch:checked + .toggle-label {
+  @apply border-primary;
+}
+
+.toggle-switch:checked + .toggle-label .toggle-button {
+  @apply translate-x-3 bg-primary;
+}
+
+/* accordion */
+.accordion-section,
+.accordion-header,
+.accordion-content {
+  transition: transform 0.5s ease;
+}
+
+.accordion-header {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0px;
+  padding: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
